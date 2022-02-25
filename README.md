@@ -1,69 +1,69 @@
-# PS4 Server 9.00u
+# PS4 Сервер 9.00u (Русская версия by tChibo)
 
 
-this is a slight mod to <a href=https://github.com/stooged/PS4-Server-900>PS4 Server 9.00</a>
+Это небольшая модификация <a href=https://github.com/stooged/PS4-Server-900>PS4 Сервера 9.00</a>.
 
-the only files now required on the spiffs storage of the esp8266 are the .bin payloads, everything else is handled internally including generating a list of payloads.
+Единственные файлы, которые теперь требуются в хранилище spiffs esp8266, — это .bin пейлоады, все остальное обрабатывается внутри, включая генерацию списка пейлоадов.
 
-you can still modify the html by uploading your own index.html, if there is no index.html on the spiffs storage the internal pages will be used.
+Вы сами все еще можете изменить html файлы, загрузив свой собственный index.html, если в хранилище spiffs нет index.html, будут использоваться внутренние страницы.
 
-if you have problems compiling the sketch make sure the <a href=https://github.com/esp8266/Arduino>ESP8266 library</a> is up to date. 
+Если у вас возникли проблемы с компиляцией скетча, убедитесь, что <a href=https://github.com/esp8266/Arduino>ESP8266 библиотека</a> обновлена.
 
-i have added the ability to switch off and on the usb device by using the pin D7 on the board to trigger a relay to control the power to the usb device.
+Добавлена возможность выключать и включать USB-устройство с помощью контакта D7 на плате, чтобы вызвать реле для управления питанием USB-устройства(флэшки).
 
-the idea is to cut the 5v power to the usb drive and have it switched on and off by a relay which is controlled by the esp8266 device and switch it off and on during the initial exploit load which removes the need to plug and unplug the usb drive.
-
-
-<a href="https://youtu.be/WrJMKA0y-Lg" target="_blank">Video</a>
+Идея состоит в том, чтобы отключить питание 5 В на USB-флэшкке и включить и выключить его с помощью реле, которое управляется устройством esp8266, и включать и выключать его во время начальной загрузки эксплойта, что устраняет необходимость подключать и отключать USB флешку.
 
 
-you can make it with a usb A female to male cable, this is a basic diagram of how to set it up.
+<a href="https://youtu.be/WrJMKA0y-Lg" target="_blank">Видео</a>
 
-<b>TRR1A05D00 5 Volt SPST DIL Reed Relay
+
+Вы можете сделать это с помощью USB-кабеля «мама-папа», это базовая схема того, как его настроить.
+
+<b>TRR1A05D00 5 Вольт SPST DIL Герконовое реле
 
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/diag.jpg><br>
 
-BESTAR  BR-500  Reed Relay (5V, 500Ω)</b>
+BESTAR BR-500 Герконовое реле (5V, 500Ω)</b>
 
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/diag1.jpg><br>
 
 <br>
 
-another way to set it up is to use a npn transistor and cut the ground to the usb device which was shown by <b><a href=https://www.psxhax.com/threads/ps4-server-9-00-ps4-server-9-00u-for-esp8266-d1-mini-pro-by-stooged.10685/post-189470>blumenal</a></b> over on psxhax.
+другой способ настроить его - использовать npn-транзистор и отрезать землю от USB-устройства, которое было показано <b><a href=https://www.psxhax.com/threads/ps4-server-9-00-ps4-server-9-00u-for-esp8266-d1-mini-pro-by-stooged.10685/post-189470>blumenal</a></b> на psxhax.
 
-the parts required are: 
+используемые детали: 
 
-<b>1k resistor<br>
-1.1k resistor<br>
-BC 548 NPN transistor</b>
+<b>1k резистор<br>
+1.1k резистор<br>
+BC 548 NPN транзистор</b>
 
-this is a basic diagram of how to set that up.
+Это базовая схема того, как это настроить.
 
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/diag2.jpg><br>
 
 
 <br><br>
 
-# Cable Mods
+# Кабельные моды
 
-this is the test cable i made and this would be the easiest for people to make.
+это тестовый кабель, который я сделал, и людям будет проще всего его сделать.
 
-parts used are:<b>
+используемые детали:<b>
 
-D1 Mini Pro v1 ESP8266 board.
+D1 Mini Pro v1 ESP8266 плата.
 
-BESTAR  BR-500  Reed Relay (5V, 500Ω)
+BESTAR BR-500 Герконовое реле (5V, 500Ω)
 
-<a href=https://www.jaycar.com.au/0-5m-usb-2-0-a-male-to-usb-a-female/p/WC7708>0.5m USB 2.0 A Male to USB A Female</a>
+<a href=https://www.jaycar.com.au/0-5m-usb-2-0-a-male-to-usb-a-female/p/WC7708>0.5m USB 2.0 A «папа» на USB «мама»</a>
 </b>
 
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/10.jpg><br>
 
 <br><br>
 
-i ended up 3d printing a small box to hold the relay and ESP8266 for the cable mod, i filled the relay/wires side with hot glue and glued the box together.
+Я закончил тем, что напечатал на 3D-принтере небольшую коробку для реле и ESP8266 для кабельного мода, я залил сторону реле / проводов горячим клеем и склеил коробку вместе.
 
-the files for the box are in the <a href=https://github.com/stooged/PS4-Server-900u/tree/main/STL>STL</a> folder and it can be printed with PLA and no supports are needed.
+Файлы для печати коробки для 3d-принтера вы моможе скачать  - <a href=https://github.com/stooged/PS4-Server-900u/tree/main/STL>здесь</a>
 
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/11.jpg><br>
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/13.jpg><br>
@@ -72,10 +72,10 @@ the files for the box are in the <a href=https://github.com/stooged/PS4-Server-9
 <br><br>
 
 
-# Alternative Method
+# Альтернативный метод 
 
 
-i made a cable to test blumenal's method and it works perfectly so if you can source those parts it is an alternative to the relay, the code needs no changes for either method to work.
+Этот кабель сделал для проверки метода от blumenal, и он отлично работает, поэтому, если вы можете найти эти детали, это альтернатива реле, код не требует изменений для работы любого метода.
 
 
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/14.jpg><br>
@@ -86,14 +86,14 @@ i made a cable to test blumenal's method and it works perfectly so if you can so
 <br><br>
 
 
-# Usb Chip In Box
+# Usb Chip В Коробке
 
-i made this cable for a friend and i decided to solder the usb chip into the circuit and i made a box for a single usb cable.
+Я сделал этот кабель для друга, и я решил впаять USB-чип в схему, и я сделал коробку для одного USB-кабеля.
 
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/23.jpg><br>
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/24.jpg><br>
 
-the end result:
+итоговый результат:
 
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/25.jpg><br>
 
@@ -104,16 +104,16 @@ the end result:
 
 # PS4 PHAT
 
-the parts used are:
+используемые детали:
 <br>
 <b>
-D1 Mini Pro v1 ESP8266 board.
+D1 Mini Pro v1 ESP8266 плата.
 
 <a href=http://www.dobe-game.com/en/productshow-55-151.html>PS4 USB HUB TP4-810</a>
 
-TRR1A05D00 5 Volt SPST DIL Reed Relay.
+TRR1A05D00 5 Вольт SPST DIL Герконовое реле.
 
-SanDisk Ultra Fit 8gb usb drive
+SanDisk Ultra Fit 8gb usb флешка
 </b>
 
 some pictures of the mod:
@@ -124,7 +124,7 @@ some pictures of the mod:
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/5.jpg><br>
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/6.jpg><br>
 
-the end result:
+конечный результат:
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/8.jpg><br>
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/7.jpg><br>
 
@@ -132,20 +132,20 @@ the end result:
 
 # PS4 SLIM
 
-the slim usb hub has less room but you can just fit the board in.
+В слимке usb-хаб намного меньше места, но вы можете просто вставить плату.
 
-the parts used are:
+используемые детали:
 
 <b>
 <a href=http://www.dobe-game.com/en/productshow-54-167.html>PS4 Slim USB HUB TP4-821</a>
 
-TRR1A05D00 5 Volt SPST DIL Reed Relay.
+TRR1A05D00 5 Volt SPST DIL Герконовое реле.
 
-D1 Mini ESP8266 board.</b>
+D1 Mini ESP8266 плата.</b>
 
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/16.jpg><br>
 
-the end result:
+итоговый результат:
 
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/17.jpg><br>
 
@@ -155,26 +155,26 @@ the end result:
 
 # PS4 PRO
 
-the usb hub for the pro.
+хаб для прошки.
 
-the parts used are:
+используемые детали:
 
 <a href=http://www.dobe-game.com/en/productshow-53-177.html>PS4 Pro USB HUB TP4-832</a>
 
-TRR1A05D00 5 Volt SPST DIL Reed Relay.
+TRR1A05D00 5 Volt SPST DIL Герконовое реле.
 
-D1 Mini Pro v1 ESP8266 board.
+D1 Mini Pro v1 ESP8266 плата.
 
-SanDisk Ultra Fit 8gb usb drive
+SanDisk Ultra Fit 8gb usb флешка
 
-this one was a little different i removed one of the usb ports and pulled the chip out of the usb drive and soldered it directly into the hub and then blocked the hole for the port i removed.
+этот вариант доработки немного другой, я удалил один из USB-портов, вытащил чип из USB-накопителя и припаял его прямо к хабу, а затем заблокировал отверстие для удаленного порта.
 
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/18.jpg><br>
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/19.jpg><br>
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/20.jpg><br>
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/21.jpg><br>
 
-the end result:
+итоговый результат:
 <img src=https://github.com/stooged/PS4-Server-900u/blob/main/Images/22.jpg><br>
 
 <br>
